@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+const fs = require('fs');
+const createReadme = require("./createReadme.js");
 
 inquirer 
     .prompt([
@@ -55,5 +57,6 @@ inquirer
         },
     ])
     .then((data) => {
-        console.log(`${data.name.toLowerCase().split(' ').join('')}.json`);
+        console.log('Creating README file...')
+        createReadme(data);
     });
