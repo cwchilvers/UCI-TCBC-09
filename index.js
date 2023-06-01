@@ -3,50 +3,57 @@ const inquirer = require('inquirer');
 inquirer 
     .prompt([
         {
-        type: 'input',
-        message: 'Project title:',
-        name: 'title',
+            type: 'input',
+            message: 'GitHub username:',
+            name: 'username',
         },
         {
-        type: 'input',
-        message: 'Project description:',
-        name: 'description',
+            type: 'input',
+            message: 'Email address:',
+            name: 'email',
         },
         {
-        type: 'input',
-        message: 'Installation instructions:',
-        name: 'installation',
+            type: 'input',
+            message: 'Project title:',
+            name: 'title',
         },
         {
-        type: 'input',
-        message: 'Usage information:',
-        name: 'usage',
-        },        {
-        type: 'input',
-        message: 'Contribution guidelines:',
-        name: 'contributing',
+            type: 'input',
+            message: 'Project description:',
+            name: 'description',
         },
         {
-        type: 'input',
-        message: 'Test instructions:',
-        name: 'tests',
+            type: 'input',
+            message: 'Installation instructions:',
+            name: 'installation',
         },
         {
-        type: 'list',
-        message: 'License:',
-        name: 'license',
+            type: 'input',
+            message: 'Usage information:',
+            name: 'usage',
+        },        
+        {
+            type: 'input',
+            message: 'Contribution guidelines:',
+            name: 'contributing',
         },
         {
-        type: 'input',
-        message: 'GitHub username:',
-        name: 'username',
+            type: 'input',
+            message: 'Test instructions:',
+            name: 'tests',
         },
         {
-        type: 'input',
-        message: 'Email address:',
-        name: 'email',
-        }
+            type: 'list',
+            message: 'License:',
+            name: 'license',
+            choices: [
+                'APACHE 2.0',
+                'GPL 3.0',
+                'BSD 3',
+                'None'
+            ],
+        },
     ])
-    .then((response) =>
-
-    );
+    .then((data) => {
+        console.log(`${data.name.toLowerCase().split(' ').join('')}.json`);
+    });

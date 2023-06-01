@@ -1,5 +1,15 @@
 {
   "dependencies": {
-    "inquirer": "^9.2.6"
-  }
+    "inquirer": "^8.2.4"
+  },
+  "name": "uci-cbc-09-readmegenerator",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
 }
