@@ -1,7 +1,10 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+
+// Get createReadme script to use for its createReadme function
 const createReadme = require("./createReadme.js");
 
+// Ask user for information
 inquirer 
     .prompt([
         {
@@ -56,7 +59,18 @@ inquirer
             ],
         },
     ])
+
+    // Create README file
     .then((data) => {
+        // Inform user that a README is being created
         console.log('Creating README file...')
-        createReadme(data);
+
+        // Use createReadme function from separate script to create the markdown content to use in the README file. Pass the user input data into the fuction.
+        readmeContent = createReadme(data);
+
+        // Create README.md file and add markdown content into it
+        fs.appendFile('README.md', readmeContent, (err) =>
+            // Inform user if README file was created successsfully
+            err ? console.error(err) : console.log('Successfully created README file')
+        );
     });
