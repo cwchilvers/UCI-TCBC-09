@@ -1,1 +1,2 @@
+const inquirer = require('inquirer');
 
