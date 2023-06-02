@@ -16,7 +16,7 @@ badge goes here
 `;
 
     // Add description section (if it exists)
-    if (data.description !== null) {
+    if (data.description !== '') {
         readmeContent = readmeContent + `
 ## Description
 ${data.description}
@@ -24,7 +24,7 @@ ${data.description}
     }
 
     // Add installation section (if it exists)
-    if (data.installation !== null) {
+    if (data.installation !== '') {
         readmeContent = readmeContent + `
 ## Installation
 ${data.installation}
@@ -32,7 +32,7 @@ ${data.installation}
     }
 
     // Add usage section (if it exists)
-    if (data.usage !== null) {
+    if (data.usage !== '') {
         readmeContent = readmeContent + `
 ## Usage
 ${data.usage}
@@ -40,7 +40,7 @@ ${data.usage}
     }
 
     // Add license section (if it exists)
-    if (data.license !== null) {
+    if (data.license !== '') {
         readmeContent = readmeContent + `
 ## License
 ${data.license}
@@ -48,7 +48,7 @@ ${data.license}
     }
 
     // Add contributing section (if it exists)
-    if (data.contributing !== null) {
+    if (data.contributing !== '') {
         readmeContent = readmeContent + `
 ## Contributing
 ${data.contributing}
@@ -56,7 +56,7 @@ ${data.contributing}
     }
 
      // Add tests section (if it exists)
-     if (data.tests !== null) {
+     if (data.tests !== '') {
         readmeContent = readmeContent + `
 ## Tests
 ${data.tests}
@@ -64,7 +64,7 @@ ${data.tests}
     }   
 
     // Add questions section (if it exists)
-    if (data.questions !== null) {
+    if (data.questions !== '') {
         readmeContent = readmeContent + `
 ## Questions
 GitHub: ${data.username}\
