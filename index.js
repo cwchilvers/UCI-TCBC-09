@@ -2,7 +2,7 @@ const inquirer = require('inquirer');
 const fs = require('fs');
 
 // Get createReadme script to use for its createReadme function
-const createReadme = require("./utils/createReadme.js");
+const createReadme = require("./assets/utils/createReadme.js");
 
 // Ask user for information
 inquirer 
