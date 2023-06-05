@@ -2,7 +2,7 @@
 
 ## Table of Contents
 * [Description](#description)
-* [Screenshots](#screenshots-&-recordings)
+* [Screenshots & Recordings](#screenshots-&-recordings)
 * [Questions](#questions)
 
 ## Description
