@@ -2,23 +2,44 @@
 function generateMarkdown(data) {
 
 // Licenses and license info
-const badges = {
-    apache: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',  
-    gpl: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
-    bsd: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+const licenses = {
+    apache: {
+        name: 'APACHE 2.0',
+        badge:'[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',
+        link: 'https://opensource.org/licenses/Apache-2.0'
+    },  
+    gpl: {
+        name: 'GPL 3.0',
+        badge: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+        link: 'https://www.gnu.org/licenses/gpl-3.0'
+    },
+    
+    bsd: {
+        name: 'BSD 3',
+        badge: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+        link: 'https://opensource.org/licenses/BSD-3-Clause'
+    }
 }
 
 let badge;
+let name;
+let link;
 
 switch (data.license) {
     case 'APACHE 2.0' :
-        badge = badges.apache;
+        name = licenses.apache.name;
+        badge = licenses.apache.badge;
+        link = licenses.apache.link;
 
     case 'GPL 3.0' :
-        badge = badges.gpl;
+        name = licenses.gpl.name;
+        badge = licenses.gpl.badge;
+        link = licenses.gpl.link;
 
     case 'BSD 3' :
-        badge = badges.bsd;
+        name = licenses.bsd.name;
+        badge = licenses.bsd.badge;
+        link = licenses.bsd.link;
 }
     
 // Create beginning of README    
@@ -103,7 +124,7 @@ ${data.usage}
     if (data.license !== 'None') {
         markdown = markdown + `
 ## License
-This application is covered by the ${badge} license.
+This application is covered by the [${name}](${link}) license.
 `;    
     }
 
