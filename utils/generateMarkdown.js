@@ -26,7 +26,8 @@ switch (data.license) {
 `
 
 if (data.license !== 'None') {
-`${badge}
+    markdown = markdown + `
+${badge}
 `
 }  
 
