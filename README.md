@@ -1,4 +1,4 @@
-# README Generator
+# CLI README Generator
 
 ## Table of Contents
 * [Description](#description)
