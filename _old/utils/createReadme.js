@@ -1,20 +1,54 @@
 // Function to take user input data from and add it into the contents of the README file
 function createReadme(data) {
-    let readmeContent = `
-# ${data.title}
+ 
+// Create beginning of README    
+    let readmeContent = `# ${data.title}
 
 badge goes here
 
-## Table of Contents
-* [Description](#description)
-* [Installation](#installation)
-* [Usage](#usage)
-* [License](#license)
-* [Contributing](#contributing)
-* [Tests](#tests)
-* [Questions](#questions)
-`;
+## Table of Contents`;
 
+// Create table of contents for sections that exist
+    if (data.description !== '') {
+        readmeContent = readmeContent + `
+* [Description](#description)`;    
+    }
+
+    if (data.installation !== '') {
+        readmeContent = readmeContent + `
+* [Installation](#installation)`;    
+    }
+
+    if (data.usage !== '') {
+        readmeContent = readmeContent + `
+* [Usage](#usage)`;    
+    }
+
+    if (data.license !== '') {
+        readmeContent = readmeContent + `
+* [License](#license)`;    
+    }
+
+    if (data.contributing !== '') {
+        readmeContent = readmeContent + `
+* [Contributing](#contributing)`;    
+    }
+
+     if (data.tests !== '') {
+        readmeContent = readmeContent + `
+* [Tests](#tests)`;    
+    }   
+
+    if (data.questions !== '') {
+        readmeContent = readmeContent + `
+* [Questions](#questions)`;
+    }
+
+// Add a break
+readmeContent = readmeContent + `
+`;    
+
+// Add sections
     // Add description section (if it exists)
     if (data.description !== '') {
         readmeContent = readmeContent + `
@@ -67,9 +101,8 @@ ${data.tests}
     if (data.questions !== '') {
         readmeContent = readmeContent + `
 ## Questions
-GitHub: ${data.username}\
-Email: ${data.email}
-`;
+GitHub: ${data.username}
+Email: ${data.email}`;
     }
 
     return readmeContent;
