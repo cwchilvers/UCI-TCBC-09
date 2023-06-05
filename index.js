@@ -75,9 +75,3 @@ inquirer
             err ? console.error(err) : console.log('Successfully created README file. File can be found inside the output folder')
         );
     });
-
-// TODO: Create a function to initialize app
-function init() {}
-
-// Function call to initialize app
-init();
