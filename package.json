@@ -1,14 +1,15 @@
 {
-  "name": "static-site",
+  "name": "uci-cbc-09-readmegenerator",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [],
+  "author": "Chandler Chilvers",
   "license": "ISC",
   "dependencies": {
-    "inquirer": "^6.3.1"
+    "inquirer": "^8.2.4"
   }
 }

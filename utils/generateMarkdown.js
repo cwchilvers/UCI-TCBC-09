@@ -1,57 +1,82 @@
 // Function to take user input data from and add it into the contents of the README file
-function createReadme(data) {
- 
+function generateMarkdown(data) {
+
+// Licenses and license info
+const badges = {
+    apache: '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)',  
+    gpl: '[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)',
+    bsd: '[![License](https://img.shields.io/badge/License-BSD_3--Clause-blue.svg)](https://opensource.org/licenses/BSD-3-Clause)',
+}
+
+let badge;
+
+switch (data.license) {
+    case 'APACHE 2.0' :
+        badge = badges.apache;
+
+    case 'GPL 3.0' :
+        badge = badges.gpl;
+
+    case 'BSD 3' :
+        badge = badges.bsd;
+}
+    
 // Create beginning of README    
-    let readmeContent = `# ${data.title}
+    let markdown = `# ${data.title}
+`
 
-badge goes here
+if (data.license !== 'None') {
+`${badge}
+`
+}  
 
+  markdown = markdown + `
 ## Table of Contents`;
 
 // Create table of contents for sections that exist
     if (data.description !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Description](#description)`;    
     }
 
     if (data.installation !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Installation](#installation)`;    
     }
 
     if (data.usage !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Usage](#usage)`;    
     }
 
-    if (data.license !== '') {
-        readmeContent = readmeContent + `
+    if (data.license !== 'None') {
+        markdown = markdown + `
 * [License](#license)`;    
     }
 
     if (data.contributing !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Contributing](#contributing)`;    
     }
 
      if (data.tests !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Tests](#tests)`;    
     }   
 
     if (data.questions !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 * [Questions](#questions)`;
     }
 
 // Add a break
-readmeContent = readmeContent + `
+markdown = markdown + `
 `;    
 
 // Add sections
     // Add description section (if it exists)
     if (data.description !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Description
 ${data.description}
 `;    
@@ -59,7 +84,7 @@ ${data.description}
 
     // Add installation section (if it exists)
     if (data.installation !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Installation
 ${data.installation}
 `;    
@@ -67,23 +92,23 @@ ${data.installation}
 
     // Add usage section (if it exists)
     if (data.usage !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Usage
 ${data.usage}
 `;    
     }
 
     // Add license section (if it exists)
-    if (data.license !== '') {
-        readmeContent = readmeContent + `
+    if (data.license !== 'None') {
+        markdown = markdown + `
 ## License
-${data.license}
+This application is covered by the ${badge} license.
 `;    
     }
 
     // Add contributing section (if it exists)
     if (data.contributing !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Contributing
 ${data.contributing}
 `;    
@@ -91,7 +116,7 @@ ${data.contributing}
 
      // Add tests section (if it exists)
      if (data.tests !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Tests
 ${data.tests}
 `;    
@@ -99,14 +124,15 @@ ${data.tests}
 
     // Add questions section (if it exists)
     if (data.questions !== '') {
-        readmeContent = readmeContent + `
+        markdown = markdown + `
 ## Questions
 GitHub: ${data.username}
+
 Email: ${data.email}`;
     }
 
-    return readmeContent;
+    return markdown;
 }
 
 // Make the createReadme function accessible outside of script 
-module.exports = createReadme;
+module.exports = generateMarkdown;

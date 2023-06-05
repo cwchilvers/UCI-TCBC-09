@@ -1,8 +1,9 @@
+// Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require('fs');
 
-// Get createReadme script to use for its createReadme function
-const createReadme = require("./assets/utils/createReadme.js");
+// Include generateMarkdown script to use for its generateMarkdown function
+const generateMarkdown = require("./utils/generateMarkdown.js");
 
 // Ask user for information
 inquirer 
@@ -66,11 +67,17 @@ inquirer
         console.log('Creating README file...')
 
         // Use createReadme function from separate script to create the markdown content to use in the README file. Pass the user input data into the fuction.
-        const readmeContent = createReadme(data);
+        const markdown = generateMarkdown(data);
 
         // Create README.md file and add markdown content into it
-        fs.writeFile('./output/README.md', readmeContent, (err) =>
+        fs.writeFile('./output/README.md', markdown, (err) =>
             // Inform user if there was an error or else inform user if README file was successfully created
             err ? console.error(err) : console.log('Successfully created README file. File can be found inside the output folder')
         );
     });
+
+// TODO: Create a function to initialize app
+function init() {}
+
+// Function call to initialize app
+init();
