@@ -1,19 +1,49 @@
-# CLI README Generator
+<h1 align="center">
+  README Generator
+</h1>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Node.js-339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white" alt="MySQL">
+  <img src="https://img.shields.io/badge/SVG-FFB13B.svg?style=for-the-badge&logo=SVG&logoColor=black" alt="SVG">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" alt="MIT License">
+</p>
+
+<h4 align="center">A simple README generator.</h4>
 
 ## Table of Contents
-* [Description](#description)
-* [Screenshots](#screenshots)
-* [Questions](#questions)
+1. [Description](#description)
+2. [Installation](#installation)
+3. [Usage](#usage)
+4. [Technologies Used](#technologies-used)
+5. [License](#license)
+6. [Credits](#credits)
+7. [Contact Information](#contact-information)
 
 ## Description
-Generates a README file using command line. User is given several prompts asking for information to add to README file. User can leave blank answers and the application will not add sections of the README left blank.
+This project is a simple README generator. It uses Node.js and Inquirer.js to prompt the user for information about their project. The user's input is then used to generate a README file. The README file is saved to the `output` folder.
 
-## Screenshots
-![Screenshot 2023-06-05 110523](https://github.com/cwchilvers/UCI-CBC-09-ReadmeGenerator/assets/59628271/2757f4d4-eff1-43d0-8164-10fda163263d)
-![Screenshot 2023-06-05 110809](https://github.com/cwchilvers/UCI-CBC-09-ReadmeGenerator/assets/59628271/b8a3447f-7f79-491c-b51c-79d017ea0e2d)
-[Screen Recording](https://drive.google.com/file/d/1g3H3aBkrsLGNBXLw_sW_i5DI5h3H_PGj/view?usp=drive_link)
+## Installation
+1. Clone the repository locally.
+2. Navigate to the root folder of the repository.
+3. Run `npm install` to install the required dependencies.
 
-## Questions
-GitHub: cwchilvers
+## Usage
+1. Run `npm start` to start the application.
+2. Follow the prompts to create a README file.
+3. The README file will be saved to the `output` folder.
 
-Email: cwchilvers@gmail.com
+## Technologies Used
+* Node.js
+* Inquirer.js
+
+## License
+This project is licensed under the MIT License. See the [MIT License](https://opensource.org/licenses/mit/) page for details.
+
+## Credits
+* [Inquirer.js](https://www.npmjs.com/package/inquirer)
+
+## Contact Information
+<p align="center">
+    <a href="mailto:cwchilvers@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail"></a>
+    <a href="https://github.com/cwchilvers"><img src="https://img.shields.io/badge/GitHub-181717.svg?style=for-the-badge&logo=GitHub&logoColor=white" alt="GitHub"></a>
+</p>
